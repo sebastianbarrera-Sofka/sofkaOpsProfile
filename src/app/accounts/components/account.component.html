@@ -1,0 +1,183 @@
+<div class="container-form-opsProfile" [ngStyle]="{'background-color': themes() ? '#1a1b1f' : 'white'}">
+    <mat-icon class="close-form-opsProfile" matTooltip="Cerrar" matTooltipPosition="above"
+        (click)="closeModal()">close</mat-icon>
+
+    <h2 class="title-form-opsProfile" mat-dialog-title>{{title}} </h2>
+    <form [formGroup]="formOpsProfile" (ngSubmit)="onSubmit()" class="form-opsProfile">
+        <mat-dialog-content>
+
+            <h3 class="title-section-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Información de la cuenta
+            </h3>
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="Name" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Nombre
+                    de la cuenta *</label>
+                <input type="text" id="Name" formControlName="Name">
+
+                @if (formOpsProfile.get('Name')?.touched &&
+                formOpsProfile.get('Name')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="operationsManager"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Gerente de Operaciones *</label>
+                <select id="operationsManager" formControlName="OperationManagerId">
+                    @for (users of users(); track $index) {
+                    <option [value]="users.id">{{users.name}}</option>
+                    }
+                </select>
+                @if (formOpsProfile.get('operationsManager')?.touched &&
+                formOpsProfile.get('operationsManager')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="serviceManager"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Gerente de Servicio *</label>
+                <select type="text" id="serviceManager" formControlName="ServiceManagerId">
+                    @for (users of users(); track $index) {
+                    <option [value]="users.id">{{users.name}}</option>
+                    }
+                </select>
+                @if (formOpsProfile.get('serviceManager')?.touched &&
+                formOpsProfile.get('serviceManager')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="transversalArchitect"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Arquitecto Transversal</label>
+                <select type="text" id="transversalArchitect" formControlName="TransversalArchitectId">
+                    @for (users of users(); track $index) {
+                    <option [value]="users.id">{{users.name}}</option>
+                    }
+                </select>
+
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="transversalTechLeadId"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Líder Técnico
+                    Transversal</label>
+
+                <select type="text" id="transversalTechLeadId" formControlName="transversalTechLeadId">
+                    @for (users of users(); track $index) {
+                    <option [value]="users.id">{{users.name}}</option>
+                    }
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="qtyTotalSofkianosCoEDev"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Cantidad total de Sofkianos en CoE
+                    Dev *</label>
+                <input type="number" id="qtyTotalSofkianosCoEDev" formControlName="QtyTotalSofkianosCoEDev">
+                @if (formOpsProfile.get('qtyTotalSofkianosCoEDev')?.touched &&
+                formOpsProfile.get('qtyTotalSofkianosCoEDev')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="profitMarginPercentage"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Porcentaje de margen de
+                    ganancia </label>
+                <input type="number" id="profitMarginPercentage" formControlName="profitMarginPercentage">
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="avgMonthlyBillingInThousandsUSD"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Facturación mensual
+                    promedio en miles de USD *</label>
+                <input type="number" id="avgMonthlyBillingInThousandsUSD"
+                    formControlName="AvgMonthlyBillingInThousandsUSD">
+                @if (formOpsProfile.get('avgMonthlyBillingInThousandsUSD')?.touched &&
+                formOpsProfile.get('avgMonthlyBillingInThousandsUSD')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="country"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">País</label>
+                <select type="text" id="country" formControlName="Country">
+                    <option value="1c4e70dd-25cc-4f80-9146-339e94bb7d5c">Colombia</option>
+                    <option value="30ffabb1-b8a6-4cfd-858a-936645b20eb4">Canada</option>
+                    <option value="f6fbee53-4392-472a-8dd6-a6afd56723fb">Ecuador</option>
+                    <option value="d9a02242-543f-40a3-9206-6899ca821228">Estados Unidos</option>
+                    <option value="d7a5f620-b152-43d4-8c1f-c9ab72f2a1eb">Mexico</option>
+                    <option value="941cb6e5-05eb-4843-95ab-ae41359ec73f">Panama</option>
+                    <option value="8f9b088f-8fd7-4fe8-986a-61c36001e889">Peru</option>
+                    <option value="37242f7c-479f-45f8-a650-f13d80bb38c3">Uruguay</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="label-opsProfile-form" for="proyects"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Lista de proyectos</label>
+                <input type="text" id="proyects" formControlName="Projects">
+
+            </div>
+
+            <div class="form-group">
+                <label for="workMethodology" class="label-opsProfile-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">WorkMetodologia</label>
+                <input type="text" id="workMethodology" formControlName="workMethodology">
+            </div>
+
+            <div class="form-group">
+                @if(this.action == 'Crear'){
+                <label for="serviceModality" class="label-opsProfile-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Modalidad de servicio</label>
+                <select type="text" id="serviceModality" formControlName="serviceModality">
+                    <option value="bae17a24-b4f4-42ec-a93f-1e67359cca3f">Fabrica de desarrollo </option>
+                    <option value="bef5d2a7-32e7-42d3-b820-90588b3b7670">Cedula de desarrollo</option>
+                    <option value="f1bb299f-2c68-467a-a562-cddec7ad68be">Tiempo y Materiales</option>
+                    <option value="aa90d9fc-fcae-4175-976f-512e95d12ee6">Staff Augmentation</option>
+                </select>
+                }
+                @else{
+
+                <label for="serviceModality" [ngStyle]="{'color': themes() ? '#fafafa' : ''}" class="label-opsProfile-form">Modalidad de servicio</label>
+                <select type="text" id="serviceModality" formControlName="serviceModality">
+                    <option value="bae17a24-b4f4-42ec-a93f-1e67359cca3f">Fabrica de desarrollo </option>
+                    <option value="bef5d2a7-32e7-42d3-b820-90588b3b7670">Cedula de desarrollo</option>
+                    <option value="f1bb299f-2c68-467a-a562-cddec7ad68be">Tiempo y Materiales</option>
+                    <option value="aa90d9fc-fcae-4175-976f-512e95d12ee6">Staff Augmentation</option>
+                </select>
+
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="date" class="label-opsProfile-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Fecha</label>
+                <mat-form-field class="form-field">
+                    <mat-label >Fecha de inicio</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button type="submit" [ngStyle]="{'display': action === 'Ver' ? 'none' : 'block'}"
+                [disabled]="formOpsProfile.invalid" class="btn-form-opsProfile"
+                [ngClass]="{'btn-disabled': formOpsProfile.invalid}">
+                {{action == 'Crear' || action == 'Editar' ? 'Guardar' :'Crear'}}
+            </button>
+            @if (action === "Editar" && role === "Admin") {
+                <button type="button" class="btn-form-opsProfile" (click)="deleteAccount()">Eliminar</button>
+            }
+        </mat-dialog-actions>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+ .menu-div {
+     background-color: red;
+     color: white;
+ }
+
+ .btn-theme:hover {
+     background-color: rgba(150, 145, 145, 0.466);
+     cursor: pointer;
+ }

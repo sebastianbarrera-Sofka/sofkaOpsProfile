@@ -1,0 +1,270 @@
+<div class="container-form-projects" [ngStyle]="{'background-color': themes() ? '#1a1b1f' : 'white'}">
+    <mat-icon class="close-form-opsProfile" matTooltip="Cerrar" matTooltipPosition="above"
+        (click)="closeModal()">close</mat-icon>
+    <h2 class="title-form-projecs" mat-dialog-title>{{title}}</h2>
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="form-projects">
+        <mat-dialog-content>
+            <h3 class="title-section-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Información del proyecto
+            </h3>
+            <div class="form-group">
+                <label class="label-projects-form" for="nombre" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Nombre
+                    *</label>
+                <input type="text" id="nombre" formControlName="Name">
+                @if (projectForm.get('Name')?.touched && projectForm.get('Name')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+            </div>
+
+            <div class="form-group">
+                <label class="label-projects-form" for="bussinesContext"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Contexto de negocio</label>
+                <textarea name="bussinesContext" id="bussinesContext" formControlName="bussinesContext"
+                    rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="label-projects-form" for="tipoPrestacion"
+                    [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Tipo de prestación de servicio *</label>
+                <select id="tipoPrestacion" formControlName="ServiceModalityId">
+                    <option value="bae17a24-b4f4-42ec-a93f-1e67359cca3f">Fabrica de desarrollo </option>
+                    <option value="bef5d2a7-32e7-42d3-b820-90588b3b7670">Cedula de desarrollo</option>
+                    <option value="f1bb299f-2c68-467a-a562-cddec7ad68be">Tiempo y Materiales</option>
+                    <option value="aa90d9fc-fcae-4175-976f-512e95d12ee6">Staff Augmentation</option>
+                </select>
+
+                @if (projectForm.get('ServiceModalityId')?.touched &&
+                projectForm.get('ServiceModalityId')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+            </div>
+
+            <div class="form-group dates">
+
+                <mat-form-field>
+                    <mat-label>Fecha de inicio</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="startDate">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+
+                    @if (projectForm.get('startDate')?.touched && projectForm.get('startDate')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>
+                    }
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Fecha de finalización</mat-label>
+                    <input matInput [matDatepicker]="picker2" formControlName="endDateEstimated">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+
+                    @if (projectForm.get('endDateEstimated')?.touched &&
+                    projectForm.get('endDateEstimated')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>}
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <label class="label-projects-form" for="estado" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Estado
+                    *</label>
+                <select id="estado" formControlName="StatusId">
+                    <option value="bf150669-b6e0-49ce-9a3a-8d9af7b08a08">Activo</option>
+                    <option value="02aa0d78-8b3b-4e68-8c55-6087474b1442">Finalizado</option>
+                </select>
+                @if (projectForm.get('StatusId')?.touched && projectForm.get('StatusId')?.getError('required')) {
+                <span class="error-form-projects">El campo es requerido</span>
+                }
+            </div>
+            <div class="group-cantidad">
+                <div class="form-group-qty">
+                    <label class="label-projects-form" for="qtyTotalSofkianosInProject"
+                        [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Cantidad de sofkianos en el
+                        proyecto *</label>
+                    <input type="number" id="qtyTotalSofkianosInProject" formControlName="qtyTotalSofkianosInProject">
+                    @if (projectForm.get('qtyTotalSofkianosInProject')?.touched &&
+                    projectForm.get('qtyTotalSofkianosInProject')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>
+                    }
+                </div>
+                <div class="form-group-qty">
+                    <label class="label-projects-form" for="consultoresDesarrollo"
+                        [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Cantidad de consultores de
+                        desarrollo *</label>
+                    <input type="number" id="consultoresDesarrollo" formControlName="qtyDevelopmentConsultants">
+                    @if (projectForm.get('qtyDevelopmentConsultants')?.touched &&
+                    projectForm.get('qtyDevelopmentConsultants')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>}
+                </div>
+                <div class="form-group-qty">
+                    <label class="label-projects-form" for="arquitectosEmpresariales"
+                        [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Cantidad de consultores dearquitectos
+                        empresariales *</label>
+                    <input type="number" id="arquitectosEmpresariales" formControlName="qtyEnterpriseArchitects">
+                    @if (projectForm.get('qtyEnterpriseArchitects')?.touched &&
+                    projectForm.get('qtyEnterpriseArchitects')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>}
+                </div>
+                <div class="form-group-qty">
+                    <label class="label-projects-form" for="arquitectosSolucion"
+                        [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Cantidad de consultores dearquitectos de
+                        solución *</label>
+                    <input type="number" id="arquitectosSolucion" formControlName="qtySolutionArchitects">
+                    @if (projectForm.get('qtySolutionArchitects')?.touched &&
+                    projectForm.get('qtySolutionArchitects')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>}
+                </div>
+                <div class="form-group-qty">
+                    <label class="label-projects-form" for="lideresTecnicos"
+                        [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Cantidad de líderes técnicos *</label>
+                    <input type="number" id="lideresTecnicos" formControlName="qtyTechnicalLeads">
+                    @if (projectForm.get('qtyTechnicalLeads')?.touched &&
+                    projectForm.get('qtyTechnicalLeads')?.getError('required')) {
+                    <span class="error-form-projects">El campo es requerido</span>}
+                </div>
+            </div>
+
+            <h3 class="title-section-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Stack técnico</h3>
+            <label class="label-projects-form" [ngStyle]="{'color': themes() ? '#fafafa' : ''}">Frontend</label>
+            <mat-select formControlName="frontend" multiple class="stack-select" name="frontend">
+                <mat-select-trigger>
+                    @if ((projectForm.get('frontend')?.value?.length || 0) > 0) {
+                    <span class="example">
+                        {{projectForm.get('frontend')?.value?.length}} {{projectForm.get('frontend')?.value?.length ===
+                        1 ? 'Seleccionado' : 'Seleccionados'}}
+                    </span>
+                    }
+                </mat-select-trigger>
+                @for (framework of technologies.frontend; track framework) {
+                <mat-option [value]="framework.id">{{framework.name}}</mat-option>
+                }
+            </mat-select>
+
+            <label class="label-projects-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">Backend</label>
+            <mat-select formControlName="backend" multiple class="stack-select" name="backend">
+                <mat-select-trigger>
+                    @if ((projectForm.get('backend')?.value?.length || 0) > 0) {
+                    <span class="example">
+                        {{projectForm.get('backend')?.value?.length}} {{projectForm.get('backend')?.value?.length ===
+                        1 ? 'Seleccionado' : 'Seleccionados'}}
+                    </span>
+                    }
+                </mat-select-trigger>
+                @for (framework of technologies.backend; track framework) {
+                <mat-option [value]="framework.id">{{framework.name}}</mat-option>
+                }
+            </mat-select>
+
+            <label class="label-projects-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">Mobile</label>
+            <mat-select formControlName="mobile" multiple class="stack-select" name="mobile">
+                <mat-select-trigger>
+                    @if ((projectForm.get('mobile')?.value?.length || 0) > 0) {
+                    <span class="example">
+                        {{projectForm.get('mobile')?.value?.length}} {{projectForm.get('mobile')?.value?.length ===
+                        1 ? 'Seleccionado' : 'Seleccionados'}}
+                    </span>
+                    }
+                </mat-select-trigger>
+                @for (framework of technologies.mobile; track framework) {
+                <mat-option [value]="framework.id">{{framework.name}}</mat-option>
+                }
+            </mat-select>
+
+            <label class="label-projects-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">Database</label>
+            <mat-select formControlName="database" multiple class="stack-select" name="database">
+                <mat-select-trigger>
+                    @if ((projectForm.get('database')?.value?.length || 0) > 0) {
+                    <span class="example">
+                        {{projectForm.get('database')?.value?.length}} {{projectForm.get('database')?.value?.length ===
+                        1 ? 'Seleccionado' : 'Seleccionados'}}
+                    </span>
+                    }
+                </mat-select-trigger>
+                @for (framework of technologies.database; track framework) {
+                <mat-option [value]="framework.id">{{framework.name}}</mat-option>
+                } </mat-select>
+
+            <label class="label-projects-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">DevOps</label>
+            <mat-select formControlName="devOps" multiple class="stack-select" name="devOps">
+                <mat-select-trigger>
+                    @if ((projectForm.get('devOps')?.value?.length || 0) > 0) {
+                    <span class="example">
+                        {{projectForm.get('devOps')?.value?.length}} {{projectForm.get('devOps')?.value?.length ===
+                        1 ? 'Seleccionado' : 'Seleccionados'}}
+                    </span>
+                    }
+                </mat-select-trigger>
+                @for (framework of technologies.devSecOps; track framework) {
+                <mat-option [value]="framework.id">{{framework.name}}</mat-option>
+                }
+            </mat-select>
+
+            <label class="label-projects-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">Cloud</label>
+            <mat-select formControlName="cloud" multiple class="stack-select" name="cloud">
+                <mat-select-trigger>
+                    @if ((projectForm.get('cloud')?.value?.length || 0) > 0) {
+                    <span class="example">
+                        {{projectForm.get('cloud')?.value?.length}} {{projectForm.get('cloud')?.value?.length ===
+                        1 ? 'Seleccionado' : 'Seleccionados'}}
+                    </span>
+                    }
+                </mat-select-trigger>
+                @for (framework of technologies.cloud; track framework) {
+                <mat-option [value]="framework.id">{{framework.name}}</mat-option>
+                }
+            </mat-select>
+
+            <div class="form-group">
+                <label class="label-projects-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">Otros</label>
+                <textarea name="otros" id="otros" formControlName="otros" rows="5"></textarea>
+            </div>
+
+
+            <h3 class="title-section-form" [ngStyle]="{'color': themes()? '#fafafa' : ''}">Prácticas</h3>
+            <div class="group-practicas">
+                <div class="form-group">
+                    <label class="label-projects-form" for="copilot"
+                        [ngStyle]="{'color': themes()? '#fafafa' : ''}">Usan Copilot</label>
+                    <div class="form-group-copilot">
+                        <mat-slide-toggle id="copilot" formControlName="useCopilotLicense"
+                            (change)="onCopilotToggle($event)"></mat-slide-toggle>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label-projects-form" for="cantidadLicencias"
+                        [ngStyle]="{'color': themes()? '#fafafa' : ''}">Cantidad de licencias</label>
+                    <input type="number" id="cantidadLicencias" formControlName="qtyCopilotLicenses"
+                        [ngClass]="checkCopilot() ? '' : 'disabled'">
+                </div>
+            </div>
+
+            <div class="group-practicas">
+                <div class="form-group">
+                    <label class="label-projects-form" for="copilot"
+                        [ngStyle]="{'color': themes()? '#fafafa' : ''}">Usan Sonar</label>
+                    <div class="form-group-copilot">
+                        <mat-slide-toggle id="copilot" formControlName="useSonar"
+                            (change)="onSonarToggle($event)"></mat-slide-toggle>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label-projects-form" for="cantidadLicencias"
+                        [ngStyle]="{'color': themes()? '#fafafa' : ''}">Cantidad de licencias</label>
+                    <input type="number" id="cantidadLicencias" formControlName="qtySonarLicenses"
+                        [ngClass]="checkSonar() ? '' : 'disabled'">
+                </div>
+            </div>
+
+
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button type="submit" class="btn-form-projects" [ngStyle]="{'display': action === 'Ver' ? 'none' : 'block'}"
+                [disabled]=projectForm.invalid [ngClass]="{'btn-disabled': projectForm.invalid}">{{action == 'Crear' ?
+                'Crear proyecto' :'Editar proyecto'}}
+            </button>
+
+            <button type="button" class="btn-form-delete" [ngStyle]="{'display': action == 'Editar' ? 'block' : 'none'}"
+                (click)="deletedProject(project.id)">Eliminar</button>
+        </mat-dialog-actions>
+    </form>
+</div>

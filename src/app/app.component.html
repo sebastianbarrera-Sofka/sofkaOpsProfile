@@ -1,0 +1,30 @@
+<!-- Componente principal que renderiza las demas vistas de la aplicación. Contiene el selector de rutas y el componente de la barra de navegación. -->
+@if (!isLoginPage()) {
+<app-navbar></app-navbar>
+<app-sidenav></app-sidenav>
+}
+
+
+<router-outlet />
+
+
+
+<div class="version">
+    <p class="parrafo-version">v1.0.0</p>
+</div>
+
+
+
+
+
+<!-- .version {
+position: fixed;
+z-index: 1001;
+border-radius: 25px;
+padding: 4px;
+color: #ff7e08;
+bottom: 10%px;
+left: 12%;
+width: 80px;
+z-index: 1001;
+} -->

@@ -1,0 +1,11 @@
+<div class="container-sidenav">
+    @for(navItem of navItems; track $index) {
+
+    <a routerLinkActive="active" [routerLink]="navItem.path" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon class="icons-mat" [ngStyle]="{'color': themes() ? '#fafafa' : '#0e0e0e'}"
+            routerLinkActive="selected-icon">
+            {{navItem.icon}}
+        </mat-icon>
+    </a>
+    }
+</div>

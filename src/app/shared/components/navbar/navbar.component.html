@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="navbar">
+    <div class="logo"></div>
+    <span class="spacer"></span>
+    <p class="get-roles">{{authService.getRole()}}</p>
+    <app-theme-toggle style="align-self: center; margin-right: 20px; margin-bottom: 6px;"></app-theme-toggle>
+    <img src="{{photo}}" alt="avatar" class="avatar" mat-button [matMenuTriggerFor]="menu">
+    <mat-menu #menu="matMenu" class="menu-div" style="padding:10px;">
+        <p
+            style="color: rgb(114, 108, 108); font-size: 15px; font-weight: semi-bold; border-bottom: 1px solid rgb(114, 108, 108); margin: 3px 10px;">
+            {{name}}</p>
+        <button mat-menu-item style="color: red;" (click)="logout()">Salir</button>
+    </mat-menu>
+</mat-toolbar>

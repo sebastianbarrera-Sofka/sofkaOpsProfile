@@ -1,0 +1,280 @@
+/* section container principal */
+.container {
+  padding: 20px;
+  margin: 40px 0px;
+  height: 100%;
+
+}
+
+/* div con imagen del logotipo de marca sofka  */
+/*.rayas {
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 60px;
+  right: 0px;
+  background-position: right;
+  background-position-y: 80px;
+  background-size: contain;
+  height: 100vh;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .kaizen {
+    width: 100%;
+  }
+
+  .kaizen2 {
+    bottom: 5px;
+    width: 100%;
+  }
+}*/
+
+/* Titulo para cuando es usuario se muestre / no Admin*/
+.title-dashboard {
+  font-size: 35px;
+  margin: auto;
+  width: 100%;
+  font-weight: 500;
+  text-align: start;
+}
+
+/* contenedor que engloba todo lo de cuentas */
+.container-accounts {
+  height: 100%;
+}
+
+/* container de iconos de agregar caracterizacion y editar caracterizacion */
+.container-btns-ops {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 50px;
+  left: 85%;
+  background-color: transparent;
+  padding: 4px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  gap: 20px;
+  width: 6%;
+
+  .btn-ops {
+    overflow: visible;
+    font-size: 30px;
+  }
+}
+
+mat-icon {
+  overflow: visible;
+  font-size: 30px;
+}
+
+.mat-icon:hover {
+  color: #ff7e08;
+}
+
+/* Acordeon esto es el detail */
+.details-accounts {
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0px 10%;
+  cursor: pointer;
+
+  /* desplegable del acordeon */
+  .sumary {
+    font-size: 30px;
+    color: #ff7e08;
+    border-bottom: 4px solid #06c8c8;
+  }
+
+  .sumary-dark {
+    font-size: 30px;
+    color: #ff7e08;
+    border-bottom: 4px solid #fafafa;
+  }
+
+  /* boton para editar la cuenta */
+  .btn-editar {
+    position: relative;
+    bottom: 50px;
+    left: 85%;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 4px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid;
+
+    &:hover {
+      background-color: #ff7e08;
+      color: white;
+    }
+  }
+
+  /* container principal, que engloba todo lo que hay dentro del detail, es el recuadro blanco  en cada detail */
+
+  .info-cuenta-dark {
+    border-radius: 5px;
+    border: 0.1px solid rgba(255, 255, 255, 0.466);
+    padding: 10px;
+    margin: 0 10px;
+    height: 30rem;
+    background-color: transparent;
+
+    .title-info {
+        color: #ff7e08;
+      }
+
+      /* contenedor para la parte inicial de informacion de la cuenta, la caracterizacion */
+      .container-info-reponse {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        align-items: center;
+
+        /* divs dentro de la clase container-info-reponse para hacer la separacion de las secciones de informacion */
+        .info-reponse-one {
+          width: 30%;
+
+          .label-info {
+            font-size: 15px;
+            font-weight: 200;
+            margin-bottom: 5px;
+          }
+
+          .info-reponse {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      /* container proyecto, aqui empieza la parte de proyectos */
+      .container-proyectos {
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        margin-top: 30px;
+
+        /* aqui esta el titulo de proyecto y su icono de agregar proyecto */
+        .container-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 90%;
+
+        }
+
+        /* lista desorganizada para empezar a listar los proyectos */
+        .list-proyectos {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          /* cada uno de los proyectos */
+          .proyecto-item {
+            display: flex;
+            width: 90%;
+            font-size: 20px;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+
+            /* div dentro de cada proyecto para listar los iconos de editar y visualizar  */
+            .btn-editar-proyecto {
+              display: flex;
+              gap: 20px;
+              align-items: center;
+            }
+          }
+        }
+      }
+  }
+
+  .info-cuenta {
+    border-radius: 5px;
+    border: 1px solid #ff7e08;
+    padding: 10px;
+    /*margin: 0 10px;*/
+    height: 30rem;
+    background-color: white;
+
+
+
+    .title-info {
+      color: #ff7e08;
+    }
+
+    /* contenedor para la parte inicial de informacion de la cuenta, la caracterizacion */
+    .container-info-reponse {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+
+      /* divs dentro de la clase container-info-reponse para hacer la separacion de las secciones de informacion */
+      .info-reponse-one {
+        width: 30%;
+
+        .label-info {
+          font-size: 15px;
+          font-weight: 200;
+          margin-bottom: 5px;
+        }
+
+        .info-reponse {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    /* container proyecto, aqui empieza la parte de proyectos */
+    .container-proyectos {
+      width: 100%;
+      align-items: center;
+      height: 100%;
+      margin-top: 30px;
+
+      /* aqui esta el titulo de proyecto y su icono de agregar proyecto */
+      .container-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+
+      }
+
+      /* lista desorganizada para empezar a listar los proyectos */
+      .list-proyectos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        /* cada uno de los proyectos */
+        .proyecto-item {
+          display: flex;
+          width: 90%;
+          font-size: 20px;
+          justify-content: space-between;
+          gap: 20px;
+          align-items: center;
+
+          /* div dentro de cada proyecto para listar los iconos de editar y visualizar  */
+          .btn-editar-proyecto {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+  }
+}

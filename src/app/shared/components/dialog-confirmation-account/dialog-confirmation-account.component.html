@@ -1,0 +1,11 @@
+<section class="example-section">
+    <h2>¿Estás seguro de eliminar esta cuenta?</h2>
+    <mat-checkbox class="example-margin" [(ngModel)]="checked">
+        Acepto eliminar esta cuenta
+    </mat-checkbox>
+
+    <div>
+        <button mat-button (click)="closeDialog()">Cancelar</button>
+        <button mat-button (click)="deleteAccount()" [disabled]="!checked">Eliminar</button>
+    </div>
+</section>

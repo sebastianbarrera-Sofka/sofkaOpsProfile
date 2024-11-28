@@ -1,0 +1,88 @@
+<section class="container">
+  @if(accounts$ | async; as accounts){
+
+  @if(role == "Admin"){
+  <app-searcher></app-searcher>
+  }@else{
+  <h2 class="title-dashboard">User tu listado de cuentas asociadas</h2>
+  }
+  <div class="container-accounts">
+    @for(account of accounts; track $index) {
+    <details class="details-accounts" (click)="dataAccount(account)">
+      <summary [ngClass]="themes()? 'sumary-dark' : 'sumary'">{{account.name}}</summary>
+      <div class="container-btns-ops">
+        <mat-icon class="btn-ops" matTooltip="Ver información de la cuenta {{account.name}}" matTooltipPosition="above"
+          (click)="openModal('OpsProfileComponent', 'Ver', {account})">visibility</mat-icon>
+        <mat-icon class="btn-ops" matTooltip="Editar Caracterización de la cuenta {{account.name}}"
+          matTooltipPosition="above" (click)="openModal('OpsProfileComponent', 'Editar', {account})">edit</mat-icon>
+        <mat-icon class="btn-ops" matTooltip="Crear una nueva caracterización de la cuenta {{account.name}}"
+          matTooltipPosition="above"
+          (click)="openModal('OpsProfileComponent', 'Crear', {account})">add_circle</mat-icon>
+      </div>
+
+      <div [ngClass]="themes()? 'info-cuenta-dark' : 'info-cuenta'">
+        <h2 class="title-info">Resumen operativo cuenta {{account.name}}</h2>
+
+        <div class="container-info-reponse">
+          <div class="info-reponse-one">
+            <label class="label-info">Gerente de operaciones</label>
+            <p class="info-reponse">{{account.operationManagerName}}</p>
+
+            <label class="label-info">Service manager</label>
+            <p class="info-reponse">{{account.serviceManagerName}}</p>
+          </div>
+
+          <div class="info-reponse-one">
+            <label class="label-info">Cantidad total proyectos</label>
+            <p class="info-reponse">{{account.projects.length}}</p>
+            <label class="label-info">Arquitecto transversal</label>
+            <p class="info-reponse">{{transversalArchitectName}}</p>
+          </div>
+
+          <div class="info-reponse-one">
+            <label class="label-info">Líder técnico transversal</label>
+            <p class="info-reponse">{{transversalTechLeadId}}</p>
+
+            <label class="label-info">Cantidad total Sofkianos</label>
+            <p class="info-reponse">{{quantitySofkianos()}}</p>
+          </div>
+
+          <div class="info-reponse-one">
+            <label class="label-info">Pais</label>
+            <p class="info-reponse">Colombia</p>
+
+            <label class="label-info">Líder técnico de proyecto</label>
+            <p class="info-reponse">No aplica</p>
+          </div>
+        </div>
+
+        <section class="container-proyectos">
+          <div class="container-title">
+            <h2 class="title-info">Proyectos</h2>
+            <mat-icon matTooltip="Crear nuevo proyecto en la cuenta {{account.name}}" matTooltipPosition="above"
+              (click)="openModal('FormProjectsComponent', 'Crear', {accounts})">add_circle</mat-icon>
+          </div>
+         
+          <ul class="list-proyectos">
+            @for(proyecto of account.projects; track $index) {
+            <li class="proyecto-item">
+              <span>{{ proyecto.name }}</span>
+              <div class="btn-editar-proyecto">
+                <mat-icon matTooltip="Ver información del proyecto {{proyecto.name}}" matTooltipPosition="above"
+                  (click)="openModal('FormProjectsComponent', 'Ver', {proyecto})">visibility</mat-icon>
+                <mat-icon matTooltip="Editar información del proyecto {{proyecto.name}}" matTooltipPosition="above"
+                  (click)="openModal('FormProjectsComponent', 'Editar', {proyecto})">edit</mat-icon>
+              </div>
+            </li>
+            }
+          </ul>
+        </section>
+
+      </div>
+
+    </details>
+    <br>
+    }
+  </div>
+  }
+</section>

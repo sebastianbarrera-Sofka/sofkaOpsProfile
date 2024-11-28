@@ -1,0 +1,41 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../../public/sofkaFondo.png');
+  background-size: cover;
+}
+
+.ops-logo {
+  height: 50px;
+  width: 20rem;
+  background-image: url('../../../../public/opsProfiler.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.login-content {
+  text-align: center;
+  color: white;
+}
+
+.login-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.login-button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}

@@ -1,0 +1,80 @@
+.navbar {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9808298319327731) 49%, rgba(9, 9, 121, 0.7791491596638656) 99%);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1px solid rgba(150, 145, 145, 0.466);
+  border-width: -7px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+.avatar {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 1001;
+}
+
+.menu {
+  position: absolute;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.logo {
+  height: 2.5rem;
+  width: 20rem;
+  background-image: url('../../../../../public/opsProfiler.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.menu-div {
+  background-color: red;
+}
+
+.get-roles {
+  margin-right: 20px;
+  color: #ff7e08;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container {
+  padding: 20px;
+  margin: 40px 0px;
+}
+
+.half-width-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.half-width {
+  width: 48%;
+  margin-right: 5px;
+}
+
+.half-width:last-child {
+  margin-right: 0;
+}
+
+.full-width {
+  width: 100%;
+}

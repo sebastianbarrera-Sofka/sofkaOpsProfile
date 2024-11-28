@@ -1,0 +1,205 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+}
+
+.mat-card {
+  margin: 20px auto;
+  padding: 16px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.mat-card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.mat-card-content {
+  font-size: 1em;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #efeae4;
+}
+
+.mat-mdc-selec {
+  width: 66%;
+}
+
+mat-mdc-selec {
+  width: 66%;
+}
+
+/* styles.css o styles.scss */
+.custom-snackbar {
+  &.mdc-snackbar__surface {
+    background-color: #ff7e08 !important;
+    color: white !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    color: white;
+  }
+
+  .mat-mdc-snack-bar-actions {
+    color: white;
+  }
+}
+
+
+.mat-mdc-dialog-surface {
+  width: 100% !important;
+  /* Ancho del diálogo */
+  height: 100% !important;
+  /* Altura máxima para el diálogo */
+  /* Deja que el diálogo se ajuste a su contenido */
+  overflow-y: auto !important;
+  /* Habilitar desplazamiento vertical */
+  margin: 0 !important;
+  /* Centrando el diálogo */
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0px 9px 46px 8px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 3px !important;
+  max-block-size: max-content !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+
+
+
+
+* {
+  scrollbar-width: 10px;
+  scrollbar-color: #ff7e08 #f1f1f1;
+
+}
+
+/* Scrollbar para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Ancho de la barra de scroll */
+  height: 10px;
+  /* Altura de la barra de scroll horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Color del fondo de la barra de scroll */
+  border-radius: 10px;
+  /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff7e08;
+  /* Color de la barra de scroll */
+  border-radius: 10px;
+  /* Bordes redondeados */
+}
+
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  /* Ancho de la barra de scroll */
+  scrollbar-color: #ff7e08 #f1f1f1;
+  /* Color de la barra y del fondo */
+}
+
+
+
+
+/* Definir las variables CSS para el tema claro */
+:root {
+  --primary-color: #3f51b5;
+  /* Indigo */
+  --accent-color: #e91e63;
+  /* Pink */
+  --warn-color: #f44336;
+  /* Red */
+  --background-color: #efeae4;
+  --text-color: black;
+}
+
+/* Tema oscuro usando variables CSS */
+.dark-theme {
+  --primary-color: #607d8b;
+  /* Blue Grey */
+  --accent-color: #ffc107;
+  /* Amber */
+  --warn-color: #f44336;
+  /* Red */
+  --background-color: #09090b;
+  --text-color: #FAFAFA;
+}
+
+/* Aplicar los colores a los componentes */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.mat-button {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+
+.custom-snackbar {
+  .mdc-snackbar__surface {
+    background-color: #ff7e08 !important;
+    color: white !important;
+    display: flex !important;
+    justify-content: center !important;
+
+    .mat-mdc-button-touch-target {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .mat-mdc-snack-bar-action {
+      margin: 0;
+      color: white !important;
+    }
+  }
+}
+
+.custom-snackbar-error {
+  .mdc-snackbar__surface {
+    background-color: #ff0808 !important;
+    color: white !important;
+    display: flex !important;
+    justify-content: center !important;
+
+    .mat-mdc-button-touch-target {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .mat-mdc-snack-bar-action {
+      margin: 0;
+      color: white !important;
+    }
+  }
+}

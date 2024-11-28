@@ -1,0 +1,29 @@
+.container-sidenav {
+    width: 46px;
+    height: 100vh;
+    border-right: 0.1px solid rgba(150, 145, 145, 0.466);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    padding: 10px 0px;
+    position: fixed;
+    top: 61px;
+}
+
+.icons-mat {
+    overflow: visible;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.icons-mat:hover {
+    color: #ff7e08;
+}
+
+.selected-icon {
+    border-radius: 50%;
+    padding: 4px;
+    color: #202020 !important;
+    background-color: #ffffff;
+}

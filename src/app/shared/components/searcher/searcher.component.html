@@ -1,0 +1,10 @@
+<div class="container-searcher-component">
+    <div class="search-container">
+        <h1 class="title-buscador">Busca por cuentas</h1>
+        <div class="search-input" [ngStyle]="{'color': themes() ? '#fafafa' : 'black'}">
+            <mat-icon matSuffix class="search-icon">search</mat-icon>
+            <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange($event)" placeholder="Buscar"
+                autocomplete="off" class="search-input-text" [ngStyle]="{'color': themes() ? '#fafafa' : 'black'}">
+        </div>
+    </div>
+</div>

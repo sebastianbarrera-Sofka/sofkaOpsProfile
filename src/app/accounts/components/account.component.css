@@ -1,0 +1,125 @@
+.container-form-opsProfile {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.label-opsProfile-form {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field{
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+
+mat-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: #ff7e08;
+    cursor: pointer;
+    overflow: visible;
+    font-size: 30px;
+    z-index: 10;
+}
+
+mat-icon:hover {
+    color: red;
+}
+
+.error-form-projects {
+    color: red;
+}
+
+mat-dialog-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.title-form-opsProfile {
+    font-size: 24px;
+    color: #ff7e08;
+    text-align: center;
+}
+
+.btn-disabled {
+    background-color: gray !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-disabled:hover {
+    background-color: gray !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.title-section-form {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.message-error {
+    color: red;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fcf8f8;
+}
+
+
+
+.btn-form-opsProfile {
+    background-color: #ff7e08;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-form-opsProfile:hover {
+    background-color: #45a049;
+}
+
+/* @media (max-width: 600px) {
+    .container-form-opsProfile {
+        padding: 10px;
+    }
+
+    .title-form-projecs {
+        font-size: 20px;
+    }
+
+    .title-section-form {
+        font-size: 18px;
+    }
+} */
